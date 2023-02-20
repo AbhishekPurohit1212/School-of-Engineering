@@ -1,0 +1,93 @@
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>
+        Login
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'css/loginandregister/style.css' %}">
+	<!-- <link rel="stylesheet" href="{% static 'css/loginandregister/newstyle.css' %}"> -->
+	</head>
+	<body >
+	<section class="ftco-section" id="bk">
+		<div class="container" >
+			<div class="row justify-content-center" >
+			</div>
+			<div class="row justify-content-center" >
+				<div class="col-md-7 col-lg-5">
+					<div class="wrap" id="bk1">
+						<div class="img" style="background-image: url({% static 'images/loginandregister/brand_logo.jpeg' %});"></div>
+						<div class="login-wrap p-4 p-md-5">
+			      	<div class="d-flex" >
+			      		<!-- <div class="w-100">
+			      			<h3 class="mb-4" style=" color:white; background-color:rgba(0, 0, 0, 0.6); border-radius: 5px; border: 2px solid black; width: 100px; padding: 5px;">Sign In</h3>
+			      		</div> -->
+								<div class="w-100">
+									<p class="social-media d-flex justify-content-end">
+									</p>
+								</div>
+			      	</div>
+							<form action="http://localhost:8000/loginandregister/loginvalidation/" class="signin-form" method="post">
+								{% csrf_token %}
+								<p style="color: green; background-color:rgba(0, 0, 0, 0.6); border-radius: 5px;">
+									{{msg}}
+								</p>
+								<p style="color: red; background-color:rgba(0, 0, 0, 0.6); border-radius: 5px;">
+									{% for message in messages %}
+										**{{message}}**
+									{% endfor %}
+								</p>
+			      		<div class="form-group mt-3">
+			      			<input type="email" class="form-control" required name="email">
+			      			<label class="form-control-placeholder" for="Email">Email</label>
+			      		</div>
+		            <div class="form-group">
+		              <input id="password-field" type="password" class="form-control" required name="pwd">
+		              <label class="form-control-placeholder" for="password">Password</label>
+		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+		            </div>
+		            <div class="form-group">
+		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+		            </div>
+		            <div class="form-group d-md-flex">
+		            	<div class="w-50 text-left">
+			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="w-50 text-md-right">
+										<a href="http://localhost:8000/loginandregister/forgotpassword" style="color: white;">Forgot Password</a>
+									</div>
+		            </div>
+             <p class="mb-5 pb-lg-2" style="color: white;">Don't have an account? <a href="http://localhost:8000/loginandregister/registration" style="color:#01d28e;">Sign Up</a></p>
+		          </form>
+
+		        </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'js/loginandregister/jquery.min.js' %}"></script>
+  <script src="{% static 'js/loginandregister/popper.js' %}"></script>
+  <script src="{% static 'js/loginandregister/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/loginandregister/main.js' %}"></script>
+
+	</body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+     <!-- link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+     <!-- link for css styles -->
+    <link rel="stylesheet" href="{% static 'css/soesite/homepage/styles1.css' %}">
+     <!-- link for google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Merriweather&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <!-- fontawesome logo link -->
+    <script src="https://kit.fontawesome.com/d07003baf1.js" crossorigin="anonymous"></script>
+    <title>Subject</title>
+  </head>
+  <body>
+
+   <!-- front section -->
+  <section id="navbar">
+    <nav class="navbar navbar-expand-lg " style="background-color:dark;">
+    <div class="container-fluid">
+      <img src="{% static 'images/soesite/homepage/brand_logo.jpeg' %}" style="height:60px;
+      width:60px;
+      background-radius:100%;
+      margin-top:5px;
+      border-radius: 50%;" alt="">
+      <!-- <a class="navbar-brand" style="color:white; text-shadow: 2px 2px 5px black;"  href="#">SchoolofEngineers</a> -->
+      <!-- <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarRightAlignExample"
+      aria-controls="navbarRightAlignExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      style="margin-top:10px;
+      color:black;"
+>
+  <i class="fas fa-bars"></i>
+</button> -->
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item " >
+            <a class="nav-link active" style="color:#99A799;" aria-current="page" href="#home">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color:#99A799;" href="#about-sections">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  style="color:#99A799;" href="#resources">RESOURCES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:#99A799;" href="#team">TEAM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:#99A799;"  href="#counter">COUNTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:#99A799;"  href="#footer">CONTACT</a>
+          </li>
+        </ul>
+      </div> -->
+    </div>
+  </nav>
+  </section>
+
+<div id="section-heading" style="padding-top:20px;">
+  <div class="title text-center wow fadeInUp" data-wow-duration="500ms">
+    <h1 class="about-heading fade-in-down  " >{{sub.subject_name}}<span class="about-heading fade-in-down " style="color:#57cbcc; text-shadow: 2px 2px 5px white;"> </span></h1>
+    <div class="border"></div>
+  </div>
+</div>
+<section>
+
+</section>
+
+<!-- Book Section -->
+<section id="book-section">
+<h1 class="heading-subjectPage">  Books <i class="fas fa-book-open"></i></h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for book in books %}
+  <div class="col">
+    <div class="card h-100 ">
+      <img
+        src="{% static 'images/soesite/homepage/book.jpeg'%}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title"> <a href="#">{{book.resource_name}}</a> </h5>
+        <p class="card-text">
+          Click to
+          <a href="{{book.resource_link}}">Download.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+</section>
+
+<!-- Tutorial section -->
+
+<section id="tutorial-section">
+  <h1 class="heading-subjectPage">  Tutorials <i class="fab fa-youtube"></i></h1>
+  <div class="row">
+    {% for video in videos %}
+    <div class="col col-lg-4 col-md-12 col-sm-12">
+      <div class="card text-center " style="
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+">
+        <div class="container container-tutorial">
+           <iframe class="responsive-iframe" style="height:80%; width:80%;"  src="https://www.youtube.com/embed/?listType=playlist&list={{video.resource_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- <div class="container container-tutorial">
+  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/?listType=playlist&list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y"></iframe>
+</div> -->
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- more useful link -->
+
+<section id="more-link">
+  <h1 class="heading-subjectPage" style="margin-bottom:50px;"> More Helpful Link  <i class="fas fa-clipboard"></i></h1>
+  <div class="more-link">
+    <h3>   Want to know more about subject you can refer to given sites</h3>
+    <div class="more-link-sites">
+      {% for note in notes%}
+      <p> <a href="{{note.resource_link}}"> <i class="fas fa-long-arrow-alt-right"></i> {{note.resource_name}}</a> </p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Review -->
+
+
+<!-- query section -->
+
+<section id="query-box">
+  <div class="query-box">
+    <h2> Review <i class="fas fa-pen"></i></h2>
+    <form class="query" method="post" action="http://localhost:8000/soesite/resources/{{sub.subject_id}}/review/">
+      {% csrf_token %}
+      <input type="text" placeholder="" autocomplete="off" required="required" name="reviewtext"/>
+      <button type="submit" style="color: #57cbcc;" > <span>Send</span></button>
+      <!-- <button type="submit" class="btn btn-info btn-main">Send</button> -->
+    </form>  
+    <div id="msg" style="width: 500px; margin-top: 10px; color: rgb(82, 155, 9); margin-left: 34%; font-weight: bold; background-color: rgb(0, 0, 0); border-radius: 5px;">
+      {% for message in messages %}
+        {{message}}
+      {% endfor %}
+    </div>  
+  </div>
+</section>
+
+
+<!-- Footer -->
+<section id="footer">
+
+  <footer class="page-footer font-small blue-grey lighten-5" style="padding-top:60px; background-color: #353b43;">
+
+    <div >
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <div class="title text-center wow fadeInUp" data-wow-duration="500ms">
+            <h1 class="about-heading fade-in-down  " style="color:white; text-shadow: 2px 2px 5px black;">Contact<span class="about-heading fade-in-down " style="color:#57cbcc; text-shadow: 2px 2px 5px black;"> Us</span></h1>
+    				<div class="border"></div>
+    			</div>
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0 contact-headings">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center social-media text-md-right">
+
+            <ul class="list-inline" >
+              <li class="social-media"><a href="https://trello.com/b/YRNsd3DM/schoolofengineers"><i style="color: #afbac4;" class="fab fa-facebook-f fa-1x"></i></a></li>
+              <li class="social-media"><a href="https://trello.com/b/YRNsd3DM/schoolofengineers"><i style="color: #afbac4;" class="fab fa-twitter"></i></a></li>
+              <li class="social-media"><a href="https://trello.com/b/YRNsd3DM/schoolofengineers"><i style="color: #afbac4;" class="fab fa-linkedin-in"></i></a></li>
+              <li class="social-media"><a href="https://trello.com/b/YRNsd3DM/schoolofengineers"><i style="color: #afbac4;" class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+      <!-- Grid row -->
+      <div class="row mt-3 dark-grey-text">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase contact-headings font-weight-bold">School Of Engineers</h6>
+          <hr class=" contact-address teal accent-3 mb-4 mt-0  d-inline-block mx-auto" style="width: 60px;">
+          <p class=" contact-address " >This is learning platform where you will get all resouces of any engineering subject </p>
+
+        </div>
+        <!-- Grid column -->
+
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase contact-headings font-weight-bold">Useful links</h6>
+          <hr class="teal contact-address accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="" style="color: #737f8a;" href="">Your Account</a>
+          </p>
+          <p>
+            <a class="" style="color: #737f8a;" href="#resources">Resources</a>
+          </p>
+          <p>
+            <a class="" style="color: #737f8a;" href="#about-sections">About Us</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase contact-headings font-weight-bold">Contact</h6>
+          <hr class="teal accent-3 mb-4 contact-address mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p class="contact-address">
+            <i class="fas contact-headings  fa-home mr-3"></i>  Indore, MV road, vallabh nagar, India</p>
+          <p class="contact-address">
+            <i class="fas contact-headings  fa-envelope mr-3"></i>  schoolofengineers@gmail.com</p>
+          <p class="contact-address" >
+            <i class="fas contact-headings  fa-phone mr-3"></i>  + 91 8435 669385</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center contact-headings  py-3">Â© 2021 Copyright:
+      <a class="contact-headings"  href=""> SchoolOfEngineers.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+</section>
+
+  </body>
+</html>

@@ -1,0 +1,518 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+     <!-- link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+     <!-- link for css styles -->
+    <link rel="stylesheet" href="{% static 'css/soesite/homepage/styles1.css' %}">
+     <!-- link for google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Merriweather&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <!-- fontawesome logo link -->
+    <script src="https://kit.fontawesome.com/d07003baf1.js" crossorigin="anonymous"></script>
+    <title>Resources</title>
+  </head>
+  <body>
+
+   <!-- front section -->
+  <section id="navbar">
+    <nav class="navbar navbar-expand-lg " style="background-color:dark;">
+    <div class="container-fluid">
+      <img src="{% static 'images/soesite/homepage/brand_logo.jpeg' %}" style="height:60px;
+      width:60px;
+      background-radius:100%;
+      margin-top:10px;
+      border-radius: 50%;" alt="">
+        </div>
+  </nav>
+  </section>
+
+  <h1 class="about-heading fade-in-down ">Resour<span class="about-heading fade-in-down " style="color:#57cbcc;">ces</span></h1>
+  <div class="border"></div>
+
+<section id="resources-list" class="resources-list">
+  <div class="row">
+    <div class="col col-lg-3 col-md-2 col-sm-12">
+      <h3>First Year</h3>
+      <div class="subject_name">
+        {% for sub in year1 %}
+        <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+        {% endfor %}
+      </div>
+
+    </div>
+
+<!-- second year0 -->
+<div class="col col-lg-3 col-md-2 col-sm-12">
+  <h3>Second Year</h3>
+  <h4> <i class="fas fa-caret-right"></i>CSE</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 1 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>IT</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 2 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>ME</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 4 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EC</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 3 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EI</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 7 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>CE</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 6 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>BM</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 8 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>IP</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 9 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EE</h4>
+  <div class="subject_name">
+    {% for sub in year2 %}
+    {% if sub.branch_id_id == 5 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- third year -->
+
+<div class="col col-lg-3 col-md-2 col-sm-12">
+  <h3>Third Year</h3>
+  <h4> <i class="fas fa-caret-right"></i>CSE</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 1 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>IT</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 2 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>ME</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 4 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EC</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 3 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EI</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 7 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>CE</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 6 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>BM</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 8 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>IP</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 9 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EE</h4>
+  <div class="subject_name">
+    {% for sub in year3 %}
+    {% if sub.branch_id_id == 5 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- final year -->
+
+<div class="col col-lg-3 col-md-2 col-sm-12">
+  <h3>Final Year</h3>
+  <h4> <i class="fas fa-caret-right"></i>CSE</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 1 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>IT</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 2 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>ME</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 4 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EC</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 3 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EI</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 7 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>CE</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 6 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>BM</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 8 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>IP</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 9 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <h4> <i class="fas fa-caret-right"></i>EE</h4>
+  <div class="subject_name">
+    {% for sub in year4 %}
+    {% if sub.branch_id_id == 5 %}
+    <p> <a href="http://localhost:8000/soesite/resources/{{sub.subject_id}}/"> <i class="fas fa-long-arrow-alt-right"></i> {{sub.subject_name}}</a> </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+  </div>
+</section>
+
+  <!-- <section id="resources_resources">
+      <h1 class="heading-subjectPage" style="margin-bottom:50px;"><i style="padding-right:10px;" class="fas fa-stream"></i> Resources list  </h1>
+      <div class="row">
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+          <div class="resources_page">
+            <h3> <i class="fas fa-caret-right"></i> Computer Science engineering</h3>
+            <div class="subject_name">
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> GeeksForGeeks</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> W3School</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> YouTube</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> moreRef</a> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+          <div class="resources_page">
+            <h3> <i class="fas fa-caret-right"></i> Information Technology</h3>
+            <div class="subject_name">
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> GeeksForGeeks</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> W3School</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> YouTube</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> moreRef</a> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+          <div class="resources_page">
+            <h3> <i class="fas fa-caret-right"></i>Mechanical Engineering</h3>
+            <div class="subject_name">
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> GeeksForGeeks</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> W3School</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> YouTube</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> moreRef</a> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+          <div class="resources_page">
+            <h3> <i class="fas fa-caret-right"></i>Electronics And Communication Engineering</h3>
+            <div class="subject_name">
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> GeeksForGeeks</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> W3School</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> YouTube</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> moreRef</a> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+          <div class="resources_page">
+            <h3> <i class="fas fa-caret-right"></i>Electronics And Instrumentation Engineering</h3>
+            <div class="subject_name">
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> GeeksForGeeks</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> W3School</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> YouTube</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> moreRef</a> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+          <div class="resources_page">
+            <h3> <i class="fas fa-caret-right"></i> Civil Engineering</h3>
+            <div class="subject_name">
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> GeeksForGeeks</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> W3School</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> YouTube</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> moreRef</a> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+          <div class="resources_page">
+            <h3> <i class="fas fa-caret-right"></i> Industrial Producation</h3>
+            <div class="subject_name">
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> GeeksForGeeks</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> W3School</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> YouTube</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> moreRef</a> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+          <div class="resources_page">
+            <h3> <i class="fas fa-caret-right"></i> Biomedical Engineering </h3>
+            <div class="subject_name">
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> GeeksForGeeks</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> W3School</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> YouTube</a> </p>
+              <p> <a href="#"> <i class="fas fa-long-arrow-alt-right"></i> moreRef</a> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section> -->
+
+
+
+
+<!-- Footer -->
+<section id="footer">
+
+  <footer class="page-footer font-small blue-grey lighten-5" style="padding-top:60px; background-color: #353b43;">
+
+    <div >
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <div class="title text-center wow fadeInUp" data-wow-duration="500ms">
+            <h1 class="about-heading fade-in-down  " style="color:white; text-shadow: 2px 2px 5px black;">Contact<span class="about-heading fade-in-down " style="color:#57cbcc; text-shadow: 2px 2px 5px black;"> Us</span></h1>
+    				<div class="border"></div>
+    			</div>
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0 contact-headings">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center social-media text-md-right">
+
+            <ul class="list-inline" >
+              <li class="social-media"><a href="https://trello.com/b/YRNsd3DM/schoolofengineers"><i style="color: #afbac4;" class="fab fa-facebook-f fa-1x"></i></a></li>
+              <li class="social-media"><a href="https://trello.com/b/YRNsd3DM/schoolofengineers"><i style="color: #afbac4;" class="fab fa-twitter"></i></a></li>
+              <li class="social-media"><a href="https://trello.com/b/YRNsd3DM/schoolofengineers"><i style="color: #afbac4;" class="fab fa-linkedin-in"></i></a></li>
+              <li class="social-media"><a href="https://trello.com/b/YRNsd3DM/schoolofengineers"><i style="color: #afbac4;" class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+      <!-- Grid row -->
+      <div class="row mt-3 dark-grey-text">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase contact-headings font-weight-bold">School Of Engineers</h6>
+          <hr class=" contact-address teal accent-3 mb-4 mt-0  d-inline-block mx-auto" style="width: 60px;">
+          <p class=" contact-address " >This is learning platform where you will get all resouces of any engineering subject </p>
+
+        </div>
+        <!-- Grid column -->
+
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase contact-headings font-weight-bold">Useful links</h6>
+          <hr class="teal contact-address accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="" style="color: #737f8a;" href="">Your Account</a>
+          </p>
+          <p>
+            <a class="" style="color: #737f8a;" href="#resources">Resources</a>
+          </p>
+          <p>
+            <a class="" style="color: #737f8a;" href="#about-sections">About Us</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase contact-headings font-weight-bold">Contact</h6>
+          <hr class="teal accent-3 mb-4 contact-address mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p class="contact-address">
+            <i class="fas contact-headings  fa-home mr-3"></i>  Indore, MV road, vallabh nagar, India</p>
+          <p class="contact-address">
+            <i class="fas contact-headings  fa-envelope mr-3"></i>  schoolofengineers@gmail.com</p>
+          <p class="contact-address" >
+            <i class="fas contact-headings  fa-phone mr-3"></i>  + 91 8435 669385</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center contact-headings  py-3">Â© 2021 Copyright:
+      <a class="contact-headings"  href=""> SchoolOfEngineers.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+</section>
+
+  </body>
+</html>
